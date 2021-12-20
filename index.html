@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebUI</title>
+    <link href="css/css.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <div id=flashcards>
+      <p id='space' onclick="flip();"></p>
+      <input type='button' value="next" id='next' onclick="next();">
+      <input type="button" value="go to stage 2" id='stage2' onclick="test_a();">
+    </div>
+
+    <div id="tf_test">
+      <p id='tf_question'></p>
+      <p id='tf_true' onclick="flip();">True</p>
+      <p id='tf_false' onclick="flip();">False</p>
+    </div>
+    
+
+    <script src="js/local_storage.js"></script>
+    <script src="js/sets.js"></script>
+    <script src="js/app.js"></script>
+    
+  </body>
+</html>
