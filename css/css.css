@@ -7,7 +7,10 @@
 #tf_question{
     border-style: solid;
     border-width: 1px;
-    width: 300px;
+    width: 600px;
+    height: 100px;
+    font-size: 20px;
+    text-align: center;
 }
 
 #tf_false{
