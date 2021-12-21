@@ -13,6 +13,11 @@ var tf_c_set=[];
 onload= function(){
     document.getElementById('flashcards').style.display = 'none';
     document.getElementById('tf_test').style.display = 'none';
+    if(getlocal(dark_light=true)=='light'){
+        to_light_mode();
+    }else{
+        to_dark_mode();
+    }
     if(phase=='1'){
         flashcards();
     }
@@ -101,4 +106,41 @@ function next(){
         document.getElementById('space').innerHTML=tmp_set[flashcards_ind][flashcards_state];
     }
     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function invert_mode(){
+    if(document.getElementById('dark-light').classList.contains('light-mode')){
+        to_dark_mode();
+        setlocal(phase=null,dark_light='dark');
+    }else{
+        to_light_mode();
+        setlocal(phase=null,dark_light='light');
+    }
+}
+
+function to_light_mode(){
+    document.getElementById('dark-light').innerHTML="switch to dark mode";
+    document.querySelectorAll(".dark-mode").forEach(function(v,i,a){v.classList.add("light-mode");v.classList.remove('dark-mode')});
+}
+function to_dark_mode(){
+    document.getElementById('dark-light').innerHTML="switch to light mode";
+    document.querySelectorAll(".light-mode").forEach(function(v,i,a){v.classList.add("dark-mode");v.classList.remove('light-mode')});
 }

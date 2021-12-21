@@ -7,17 +7,20 @@
     <link href="css/css.css" rel="stylesheet"/>
   </head>
 
-  <body>
+  <body class='light-mode'>
     <div id=flashcards>
-      <p id='space' onclick="flip();"></p>
-      <input type='button' value="next" id='next' onclick="next();">
-      <input type="button" value="go to stage 2" id='stage2' onclick="test_a();">
+      <p id='space' class="light-mode" onclick="flip();"></p>
+      <input type='button' class="light-mode" value="next" id='next' onclick="next();">
+      <input type="button" class="light-mode" value="go to stage 2" id='stage2' onclick="test_a();">
     </div>
 
     <div id="tf_test">
-      <p id='tf_question'></p>
-      <p id='tf_true' onclick="process_tf_ans(1);">True</p>
-      <p id='tf_false' onclick="process_tf_ans(0);">False</p>
+      <p id='tf_question' class="light-mode"></p>
+      <p id='tf_true' class="light-mode" onclick="process_tf_ans(1);">True</p>
+      <p id='tf_false' class="light-mode" onclick="process_tf_ans(0);">False</p>
+    </div>
+    <div id='style'>
+      <p id='dark-light' class="light-mode" onclick="invert_mode();">switch to dark mode</p>
     </div>
     
 

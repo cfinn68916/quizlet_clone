@@ -24,3 +24,18 @@
     border-width: 1px;
     width: 100px;
 }
+#dark-light{
+    border-width: 1px;
+    border-style: solid;
+    width: 150px;
+}
+
+.light-mode{
+    color:black;
+    background-color:white;
+}
+
+.dark-mode{
+    color:white;
+    background-color:#303545;
+}
