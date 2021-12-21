@@ -58,7 +58,7 @@ function test_a(set=get_set()){
     tf_c_set=set;
     function cq(v,i,a){
         if(Math.random()>0.5){
-            tf_q.push([v[0]+'|'+v[1],1]);
+            tf_q.push([v[0]+' | '+v[1],1]);
         }else{
             tf_q.push([v[0]+' | '+a[Math.floor(Math.random() * a.length)][1],0]);
         }
