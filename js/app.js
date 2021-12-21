@@ -1,5 +1,5 @@
-var phase=getlocal(ph=true);
-
+var phase;
+var setnum;
 onload= function(){
     document.getElementById('flashcards').style.display = 'none';
     document.getElementById('tf_test').style.display = 'none';
@@ -8,19 +8,26 @@ onload= function(){
     }else{
         to_dark_mode();
     }
+};
+
+function begin(iset){
+    document.getElementById('set_selector').style.display = 'none';
+    phase=getphase(iset);
+    setnum=iset;
     if(phase=='1'){
         flashcards();
     }
     if(phase=='2'){
         test_a();
     }
-};
-
-onunload = function(){
-    setlocal(phase=phase);
 }
 
-function test_a(set=get_set()){
+onunload = function(){
+    
+    //setlocal(phase=phase);
+}
+
+function test_a(set=get_set(setnum)){
     if(phase==1){
         phase=2;
         setlocal(phase=phase);
