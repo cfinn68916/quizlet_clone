@@ -3,6 +3,25 @@ var tf_ind=0;
 var tf_ans=[];
 var tf_c_set=[];
 
+function make_tf(set=get_set(setnum)){    
+    document.getElementById('flashcards').style.display = 'none';
+    document.getElementById('tf_test').style.display = 'block';
+    tf_q= [];
+    tf_ind=0;
+    tf_ans=[];
+    tf_c_set=set;
+    function cq(v,i,a){
+        if(Math.random()>0.5){
+            tf_q.push([v[0]+' | '+v[1],1]);
+        }else{
+            tf_q.push([v[0]+' | '+a[Math.floor(Math.random() * a.length)][1],0]);
+        }
+    }
+    set.forEach(cq);
+    document.getElementById('tf_question').innerHTML=tf_q[0][0];
+}
+
+
 function process_tf_res(){
     var wrong=[];
     tf_ans.forEach(function(v,i,a){

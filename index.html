@@ -18,7 +18,12 @@
       <input type='button' class="light-mode" value="spanish 3 unit 4 lesson 1 vocab" id='set_7' onclick="begin(7);">
       <input type='button' class="light-mode" value="spanish 3 unit 4 lesson 2 vocab" id='set_7' onclick="begin(8);">
       <input type='button' class="light-mode" value="spanish 3 unit 4 all vocab" id='set_7' onclick="begin(9);">
-      
+    </div>
+
+    <div id='study_selector'>
+      <input type='button' class="light-mode" value="flashcards" id='study_1' onclick="hide_study();flashcards();">
+      <input type='button' class="light-mode" value="true/false quiz" id='study_2' onclick="hide_study();make_tf();">
+      <input type='button' class="light-mode" value="written" id='study_3' onclick="hide_study();write_test();">
     </div>
 
 
@@ -32,7 +37,6 @@
     <div id=flashcards>
       <p id='space' class="light-mode" onclick="flip();"></p>
       <input type='button' class="light-mode" value="next" id='next' onclick="next();">
-      <input type="button" class="light-mode" value="go to stage 2" id='stage2' onclick="test_a();">
     </div>
 
     <div id="tf_test">
@@ -40,11 +44,22 @@
       <p id='tf_true' class="light-mode" onclick="process_tf_ans(1);">True</p>
       <p id='tf_false' class="light-mode" onclick="process_tf_ans(0);">False</p>
     </div>
+    
+    <div id='write_test'>
+      <p id="write_q" class="light-mode"></p>
+      <input type="text" class="light-mode" id="write_space" value="">
+      <input type="button" class="light-mode" id="write_space" value="submit">
+      <input type="button" class="light-mode" id="write_space" value="end test" onclick="end_test();">
+    </div>
+    
+    
+    
+    
     <div id='style'>
       <p id='dark-light' class="light-mode" onclick="invert_mode();">switch to dark mode</p>
     </div>
     
-
+    <script src="js/write.js"></script>
     <script src="js/local_storage.js"></script>
     <script src="js/flashcards.js"></script>
     <script src="js/tf_quiz.js"></script>

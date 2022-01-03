@@ -3,7 +3,6 @@ var flashcards_state=0;
 var tmp_set=[];
 function flashcards(set=get_set(setnum)){
     document.getElementById('flashcards').style.display = 'block';
-    document.getElementById('stage2').style.display = 'none';
     document.getElementById('space').innerHTML=set[0][0];
     tmp_set=set;
     flashcards_ind=0;
@@ -20,7 +19,8 @@ function next(){
     flashcards_state=0;
     flashcards_ind=flashcards_ind+1;
     if(flashcards_ind==tmp_set.length){
-        document.getElementById('stage2').style.display = 'block';
+        document.getElementById('flashcards').style.display = 'none';
+        begin(setnum);
         //document.getElementById('space').innerHTML=tmp_set[flashcards_ind][flashcards_state];
     }else{
         document.getElementById('space').innerHTML=tmp_set[flashcards_ind][flashcards_state];

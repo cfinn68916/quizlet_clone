@@ -3,6 +3,8 @@ var setnum;
 onload= function(){
     document.getElementById('flashcards').style.display = 'none';
     document.getElementById('tf_test').style.display = 'none';
+    document.getElementById('write_test').style.display = 'none';
+    document.getElementById('study_selector').style.display = 'none';
     if(getlocal(dark_light=true)=='light'){
         to_light_mode();
     }else{
@@ -12,14 +14,8 @@ onload= function(){
 
 function begin(iset){
     document.getElementById('set_selector').style.display = 'none';
-    phase=getphase(iset);
+    document.getElementById('study_selector').style.display = 'block';
     setnum=iset;
-    if(phase=='1'){
-        flashcards();
-    }
-    if(phase=='2'){
-        test_a();
-    }
 }
 
 onunload = function(){
@@ -27,28 +23,10 @@ onunload = function(){
     //setlocal(phase=phase);
 }
 
-function test_a(set=get_set(setnum)){
-    if(phase==1){
-        phase=2;
-        setlocal(phase=phase);
-    }
-    
-    document.getElementById('flashcards').style.display = 'none';
-    document.getElementById('tf_test').style.display = 'block';
-    tf_q= [];
-    tf_ind=0;
-    tf_ans=[];
-    tf_c_set=set;
-    function cq(v,i,a){
-        if(Math.random()>0.5){
-            tf_q.push([v[0]+' | '+v[1],1]);
-        }else{
-            tf_q.push([v[0]+' | '+a[Math.floor(Math.random() * a.length)][1],0]);
-        }
-    }
-    set.forEach(cq);
-    document.getElementById('tf_question').innerHTML=tf_q[0][0];
+function hide_study(){
+    document.getElementById('study_selector').style.display = 'none';
 }
+
 
 function invert_mode(){
     if(document.getElementById('dark-light').classList.contains('light-mode')){
