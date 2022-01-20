@@ -4,6 +4,7 @@ function item_exists(i){
     }
     return true;
 }
+
 function create_new(){
     if(!item_exists('dark-light')){
         localStorage.setItem('dark-light','light');
@@ -54,15 +55,6 @@ function getlocal(ph=false, dark_light=false){
         }
         return dl;
     }
-}
-
-function getphase(set){
-    var phase=localStorage.getItem(set).split('<>')[0];
-    
-    if(phase==null){
-        return '1';
-    }
-    return phase;
 }
 
 function setlocal(phase=null,dark_light=null){

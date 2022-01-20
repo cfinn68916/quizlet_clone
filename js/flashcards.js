@@ -10,9 +10,6 @@ function flashcards(set=get_set(setnum)){
 }
 function flip(){
     flashcards_state=1-flashcards_state;
-    console.log(tmp_set);
-    console.log(tmp_set[flashcards_ind]);
-    console.log(flashcards_ind);
     document.getElementById('space').innerHTML=tmp_set[flashcards_ind][flashcards_state];
 }
 function next(){

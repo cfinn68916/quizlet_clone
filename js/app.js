@@ -5,6 +5,7 @@ onload= function(){
     document.getElementById('tf_test').style.display = 'none';
     document.getElementById('write_test').style.display = 'none';
     document.getElementById('study_selector').style.display = 'none';
+    document.getElementById('write_ans').style.display = 'none';
     if(getlocal(dark_light=true)=='light'){
         to_light_mode();
     }else{

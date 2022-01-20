@@ -24,6 +24,7 @@
       <input type='button' class="light-mode" value="flashcards" id='study_1' onclick="hide_study();flashcards();">
       <input type='button' class="light-mode" value="true/false quiz" id='study_2' onclick="hide_study();make_tf();">
       <input type='button' class="light-mode" value="written" id='study_3' onclick="hide_study();write_test();">
+      <input type='button' class="light-mode" value="back" id='go_back' onclick="window.location.reload();">
     </div>
 
 
@@ -49,9 +50,16 @@
       <p id="write_q" class="light-mode"></p>
       <input type="text" class="light-mode" id="write_space" value="">
       <input type="button" class="light-mode" id="write_submit" onclick="write_next();" value="submit">
-      <input type="button" class="light-mode" id="write_space" value="end test" onclick="end_test();">
+      <input type="button" class="light-mode" id="write_test_end" value="end test" onclick="end_test();">
     </div>
     
+    <div id='write_ans'>
+      <p id="write_q_result" class="light-mode"></p>
+      <p id="write_q2" class="light-mode"></p>
+      <p id="write_your_ans" class="light-mode"></p>
+      <p id="write_correct_ans" class="light-mode"></p>
+      <input type="button" class="light-mode" id="write_submit" onclick="end_view();" value="next">
+    </div>
     
     
     
