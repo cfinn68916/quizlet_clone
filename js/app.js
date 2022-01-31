@@ -2,15 +2,20 @@ var phase;
 var setnum;
 onload= function(){
     document.getElementById('flashcards').style.display = 'none';
+    document.getElementById('grammar-topic-selector').style.display = 'none';
     document.getElementById('tf_test').style.display = 'none';
     document.getElementById('write_test').style.display = 'none';
     document.getElementById('study_selector').style.display = 'none';
     document.getElementById('write_ans').style.display = 'none';
+    document.getElementById('grammar-test').style.display = 'none';
+    document.getElementById('grammar-res').style.display = 'none';
     if(getlocal(dark_light=true)=='light'){
         to_light_mode();
     }else{
         to_dark_mode();
     }
+    sort();
+    
 };
 
 function begin(iset){

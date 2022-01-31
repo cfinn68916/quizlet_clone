@@ -18,7 +18,31 @@
       <input type='button' class="light-mode" value="spanish 3 unit 4 lesson 1 vocab" id='set_7' onclick="begin(7);">
       <input type='button' class="light-mode" value="spanish 3 unit 4 lesson 2 vocab" id='set_7' onclick="begin(8);">
       <input type='button' class="light-mode" value="spanish 3 unit 4 all vocab" id='set_7' onclick="begin(9);">
+
+      <input type='button' class="light-mode" value="grammar" id='grammar_set_select' onclick="grammar_init();">
     </div>
+
+    <div id="grammar-topic-selector">
+      <input type='button' class="light-mode" value="present progressive" id='set_1' onclick="g_begin(0);">
+
+
+    </div>
+
+    <div id="grammar-test">
+      <p id="g_q" class="light-mode"></p>
+      <input type="text" class="light-mode" id="g_space" value="">
+      <input type="button" class="light-mode" id="g_submit" onclick="g_next();" value="submit">
+    </div>
+
+    <div id="grammar-res">
+      <p id="g_q_result" class="light-mode"></p>
+      <p id="g_q2" class="light-mode"></p>
+      <p id="g_your_ans" class="light-mode"></p>
+      <p id="g_correct_ans" class="light-mode"></p>
+      <input type="button" class="light-mode" id="g_submit" onclick="g_end_view();" value="next">
+    </div>
+
+
 
     <div id='study_selector'>
       <input type='button' class="light-mode" value="flashcards" id='study_1' onclick="hide_study();flashcards();">
@@ -63,10 +87,13 @@
     
     
     
-    <div id='style'>
+    <div id='footer'>
       <p id='dark-light' class="light-mode" onclick="invert_mode();">switch to dark mode</p>
+      <a class="light-mode" href="https://forms.gle/Rf6JieDRUn7d8Ji17">report a problem</a>
     </div>
-    
+
+    <script src="js/words.js"></script>
+    <script src="js/grammar.js"></script>
     <script src="js/write.js"></script>
     <script src="js/local_storage.js"></script>
     <script src="js/flashcards.js"></script>
