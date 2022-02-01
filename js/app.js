@@ -14,6 +14,7 @@ onload= function(){
     }else{
         to_dark_mode();
     }
+    local_verify();
     sort();
     
 };
