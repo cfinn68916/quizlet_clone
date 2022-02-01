@@ -50,10 +50,12 @@ function invert_mode(){
 function to_light_mode(){
     document.getElementById('dark-light').innerHTML="switch to dark mode";
     document.querySelectorAll(".dark-mode").forEach(function(v,i,a){v.classList.add("light-mode");v.classList.remove('dark-mode')});
+    setlocal(dark_light='light');
 }
 function to_dark_mode(){
     document.getElementById('dark-light').innerHTML="switch to light mode";
     document.querySelectorAll(".light-mode").forEach(function(v,i,a){v.classList.add("dark-mode");v.classList.remove('light-mode')});
+    setlocal(dark_light='dark');
 }
 function replace_all(st,i,o){
     var res=st;
