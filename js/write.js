@@ -30,6 +30,9 @@ function end_view(){
     document.getElementById('write_ans').style.display = 'none';
     document.getElementById('write_test').style.display = 'block';
     write_ind+=1;
+    if(write_ind==write_q.length){
+        end_test();
+    }
     document.getElementById('write_q').innerHTML = write_q[write_ind];
     document.getElementById('write_space').value="";
 }

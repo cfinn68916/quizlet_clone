@@ -1,4 +1,8 @@
 function get_set(set){
+    if(set<0){
+        return cs_set(-1*set);
+    }
+
     if(set==1){
         var raw=[["el campeonato","championship"],["el ciclismo","bicycle racing"],["la competencia","competition"],["competir","to compete"],["estar empatado","to be tied"],["jugar en equipo","to play on a team"],["meter un gol","to score a goal"],["el premio","prize; award"],["la Copa Mundial","The World Cup"],["los Juegos Olímpicos","The Olympic Games"],["los Juegos Panamericanos","The Panamerican Games"],["la Vuelta a Francia","the Tour de France"],["la pista","track"],["la red","net"],["el uniforme","uniform"],["¡Ay, por favor!","Oh, please!"],["¡Bravo!","Bravo!"],["¡Dale!","Come on!"],["¡Uy!","Ugh!"],["activo","active"],["el deportista","sportsman"],["lento","slow"],["musculoso","muscular"],["rápido","fast"],["Es bueno","It's good"],["Es importante","It's important"],["Es necesario","it's necessary"],["hacer ejercicio","to exercise"],["mantenerse en forma","to stay in shape"],["saludable","healthy"],["seguir una dieta balanceada","to follow a balanced diet"],["el arco","goal"],["el cesto; la canasta; el aro","hoop; basket"],["los esquís","skis"],["los guantes de boxeo","boxing gloves"],["el arquero","goalkeeper"],["el bateador","batter"],["el lanzador","pitcher"],["el porrista","cheerleader"],["el árbitro","umpire"],["batear","to bat"],["el boxeo","boxing"],["caerse","to fall"],["la carrera","race"],["la ginmasia","gymnastics"],["hacer un aro","to make a basket"],["la lucha","wrestling"],["saltar","to jump"],["practicar yoga","to do yoga"],["perder peso","to lose weight"],["subir de peso","to gain weight"],["usar las máquinas para hacer ejercicio","to use exercise machines"],["el básquetbol","basketball"],["el béisbol","baseball"],["el fútbol americano","football"],["ganar","to win"],["la natación","swimming"],["perder","to lose"],["el tenis","tennis"],["el voleibol","volleyball"],["el bate","bat"],["el casco","helmet"],["el guante","glove"],["los patines en línea","rollerblades"],["la pelota","ball"],["la raqueta","racket"],["los aficionados","fans"],["el campeón","champion (masculine)"],["la campeona","champion (feminine)"],["el campo","field"],["la cancha","court"],["el equipo","team"],["el ganador","winner"],["el jugador","player"],["doler","to hurt; to ache"],["fuerte","strong"],["heriod","hurt"],["la saldud","health"],["sano","healthy"]];
     }
@@ -26,3 +30,12 @@ function get_set(set){
 //if(set==3){
 //    var raw=    
 //}
+
+function edit_custom(){
+    document.getElementById('set_selector').style.display = 'none';
+    document.getElementById('add_set').style.display="block";
+}
+
+function add_set(num){
+    write_set(num,document.getElementById('set-name').value+'<>'+replace_all(replace_all(document.getElementById('text_in').value,document.getElementById('sep1').value,':'),document.getElementById('sep2').value,'^'));
+}

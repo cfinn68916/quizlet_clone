@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>quizlet clone</title>
     <link href="css/css.css" rel="stylesheet"/>
-    <script>var version='v1'</script>
+    <script>var version='v1.1'</script>
   </head>
 
   <body class='light-mode'>
@@ -21,6 +21,15 @@
       <input type='button' class="light-mode" value="spanish 3 unit 4 all vocab" id='set_7' onclick="begin(9);">
 
       <input type='button' class="light-mode" value="grammar" id='grammar_set_select' onclick="grammar_init();">
+      
+
+      <input type="button" class="light-mode" value="custom set 1" id="set_cs_1" onclick="begin(-1);">
+      <input type="button" class="light-mode" value="custom set 2" id="set_cs_2" onclick="begin(-2);">
+      <input type="button" class="light-mode" value="custom set 3" id="set_cs_3" onclick="begin(-3);">
+      <input type="button" class="light-mode" value="custom set 4" id="set_cs_4" onclick="begin(-4);">
+      <input type="button" class="light-mode" value="edit sets" id="set_edit" onclick="edit_custom();">
+      
+
     </div>
 
     <div id="grammar-topic-selector">
@@ -86,7 +95,22 @@
       <input type="button" class="light-mode" id="write_submit" onclick="end_view();" value="next">
     </div>
     
-    
+    <div id="add_set">
+      <p class="light-mode">paste your set here (put it in question,answer form):</p>
+      <input type="text" spellcheck="false" class="light-mode" id="text_in" value="">
+      <p class="light-mode">term/defenetion seperator:</p>
+      <input type="text" spellcheck="false" class="light-mode" id="sep1" value="">
+      <p class="light-mode">card seperator:</p>
+      <input type="text" spellcheck="false" class="light-mode" id="sep2" value="">
+      <p class="light-mode">set name:</p>
+      <input type="text" spellcheck="false" class="light-mode" id="set-name" value="">
+      <input type="button" class="light-mode" id="set_submit_1" onclick="add_set(1);" value="add as set 1">
+      <input type="button" class="light-mode" id="set_submit_2" onclick="add_set(2);" value="add as set 2">
+      <input type="button" class="light-mode" id="set_submit_3" onclick="add_set(3);" value="add as set 3">
+      <input type="button" class="light-mode" id="set_submit_4" onclick="add_set(4);" value="add as set 4">
+      
+      
+    </div>
     
     <div id='footer'>
       <p id='dark-light' class="light-mode" onclick="invert_mode();">switch to dark mode</p>

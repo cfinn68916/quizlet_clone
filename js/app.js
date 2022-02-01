@@ -9,6 +9,8 @@ onload= function(){
     document.getElementById('write_ans').style.display = 'none';
     document.getElementById('grammar-test').style.display = 'none';
     document.getElementById('grammar-res').style.display = 'none';
+    document.getElementById('add_set').style.display = 'none';
+    [1,2,3,4].forEach(function(v,i,a){if(cs_exists(v)){document.getElementById('set_cs_'+v).value=cs_name(v);}});
     if(getlocal(dark_light=true)=='light'){
         to_light_mode();
     }else{
@@ -52,4 +54,11 @@ function to_light_mode(){
 function to_dark_mode(){
     document.getElementById('dark-light').innerHTML="switch to light mode";
     document.querySelectorAll(".light-mode").forEach(function(v,i,a){v.classList.add("dark-mode");v.classList.remove('light-mode')});
+}
+function replace_all(st,i,o){
+    var res=st;
+    while(res.includes(i)){
+        res=res.replace(i,o);
+    }
+    return res;
 }

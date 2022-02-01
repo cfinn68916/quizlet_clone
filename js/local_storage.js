@@ -12,7 +12,11 @@ function create_new(){
 
 }
 function local_update(fv){
-    
+
+}
+
+function write_set(num,set){
+    localStorage.setItem('cs'+num,set);
 }
 
 
@@ -40,4 +44,18 @@ function setlocal(dark_light=null){
     if(dark_light!=null){
         localStorage.setItem('dark-light',dark_light);
     }
+}
+
+function cs_exists(num){
+    return null!=localStorage.getItem('cs'+num);
+}
+
+function cs_set(num){
+    var res=[];
+    localStorage.getItem('cs'+num).split('<>')[1].split('^').forEach(function(v,i,a){res.push([v.split(':')[0].trim(),v.split(':')[1].trim()]);});
+    return res;
+}
+
+function cs_name(num){
+    return localStorage.getItem('cs'+num).split('<>')[0];
 }

@@ -33,9 +33,9 @@ function g_next(){
         document.getElementById('g_q_result').innerHTML="Incorrect";
         g_res.push(0);
     }
-    document.getElementById('g_q2').innerHTML=g_q[g_ind-1][0];
-    document.getElementById('g_your_ans').innerHTML=document.getElementById('g_space').value;
-    document.getElementById('g_correct_ans').innerHTML=g_q[g_ind-1][1];
+    document.getElementById('g_q2').innerHTML='Definition: '+g_q[g_ind-1][0];
+    document.getElementById('g_your_ans').innerHTML='Your answer: '+document.getElementById('g_space').value;
+    document.getElementById('g_correct_ans').innerHTML='Correct answer: '+g_q[g_ind-1][1];
 
 }
 function g_end_view(){
