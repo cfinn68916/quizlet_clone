@@ -18,6 +18,7 @@ function sort(){
 
 
 function gen_q(num,qty){
+    alert('set may not fully work');
     var res=[];
     if(num==0){
         for(var i=0;i<qty;i++){

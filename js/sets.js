@@ -37,5 +37,7 @@ function edit_custom(){
 }
 
 function add_set(num){
+    
+    
     write_set(num,document.getElementById('set-name').value+'<>'+replace_all(replace_all(document.getElementById('text_in').value,document.getElementById('sep1').value,':'),document.getElementById('sep2').value,'^'));
 }
