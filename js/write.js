@@ -20,10 +20,10 @@ function write_next(){
     write_val.push(correct);
     if(correct){
         document.getElementById('write_q_result').innerHTML ="Correct";
-        document.getElementById('write_overide').style.display='none'
+        document.getElementById('write_overide').style.display='none';
     }else{
         document.getElementById('write_q_result').innerHTML ="Incorrect";
-        document.getElementById('write_overide').style.display='block'
+        document.getElementById('write_overide').style.display='block';
     }
     document.getElementById('write_q2').innerHTML = "Definition: "+write_q[write_ind];
     document.getElementById('write_your_ans').innerHTML = "Your answer: "+document.getElementById('write_space').value;

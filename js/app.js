@@ -1,6 +1,7 @@
 var phase;
 var setnum;
 var enter_code=0;
+var key_handle=0;
 onload= function(){
     document.getElementById('flashcards').style.display = 'none';
     document.getElementById('grammar-topic-selector').style.display = 'none';
@@ -11,6 +12,7 @@ onload= function(){
     document.getElementById('grammar-test').style.display = 'none';
     document.getElementById('grammar-res').style.display = 'none';
     document.getElementById('add_set').style.display = 'none';
+    document.getElementById('tf_ans').style.display = 'none';
     [1,2,3,4].forEach(function(v,i,a){if(cs_exists(v)){document.getElementById('set_cs_'+v).value=cs_name(v);}});
     if(getlocal(dark_light=true)=='light'){
         to_light_mode();
@@ -99,6 +101,17 @@ document.onkeydown = function (keyevent) {
             g_next();
         }else if(enter_code==4){
             g_end_view();
+        }
+    }
+
+    //0:none
+    //1:t/f
+    if(key_handle==1){
+        if (keyevent.key == "t") {
+            document.getElementById('tf_true').click();
+        }
+        if (keyevent.key == "f") {
+            document.getElementById('tf_false').click();
         }
     }
 

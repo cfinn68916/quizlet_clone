@@ -19,6 +19,7 @@ function make_tf(set=get_set(setnum)){
     }
     set.forEach(cq);
     document.getElementById('tf_question').innerHTML=tf_q[0][0];
+    key_handle=1;
 }
 
 
@@ -29,16 +30,25 @@ function process_tf_res(){
             wrong.push(tf_c_set[i]);
     }});
     document.getElementById('tf_test').style.display = 'none';
-    var w2=[]
+    document.getElementById('tf_ans').style.display = 'block';
+    var w2=[];
     wrong.forEach(function(v,i,a){w2.push([v[0].trim(),v[1].trim()]);});
     var new_set=[];
     tf_c_set.forEach(function(v,i,a){
         if(w2.find(function(v2,i2,a2){return (v[0]==v2[0])&&(v[1]==v2[1]);})){
-            new_set.push(v)
+            new_set.push(v);
         }
     });
-    flashcards(set=new_set);
+    if(new_set.length==0){
+        document.getElementById('tf_res_area').innerHTML='all correct!';
+    }else{
+        document.getElementById('tf_res_area').innerHTML=new_set.length+'<br>'+new_set.join('<br>');
+    }
+    key_handle=0;
+    
 }
+
+
 function process_tf_ans(ans){
     tf_ans.push(ans);
     tf_ind+=1;

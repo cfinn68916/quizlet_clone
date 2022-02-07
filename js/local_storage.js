@@ -22,7 +22,7 @@ function write_set(num,set){
 
 function local_verify(){
     if(localStorage.getItem("storage-version")==null){
-        localStorage.setItem("storage-version",'v1')
+        localStorage.setItem("storage-version",'v1');
     }else if(localStorage.getItem("storage-version")!=version){
         local_update(localStorage.getItem("storage-version"));
     }
