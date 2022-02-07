@@ -18,6 +18,7 @@ function g_begin(num){
     document.getElementById('grammar-test').style.display = 'block';
     document.getElementById('g_q').innerHTML=g_q[g_ind][0];
     enter_code=3;
+    key_handle=3;
 }
 
 function g_next(){
@@ -51,6 +52,7 @@ function g_end_view(){
 
 function g_end(){
     enter_code=0;
+    key_handle=0;
     document.getElementById('grammar-test').style.display = 'none';
     document.getElementById('grammar-res').style.display = 'none';
     var c=0;
@@ -59,6 +61,17 @@ function g_end(){
     alert(c+" out of "+t+" correct("+(100*c/t)+"%)");
     window.location.reload();
 }
+
+function g_add_accent(){
+    document.getElementById('g_space').value=document.getElementById('g_space').value.replace("'a",'á');
+    document.getElementById('g_space').value=document.getElementById('g_space').value.replace("'e",'é');
+    document.getElementById('g_space').value=document.getElementById('g_space').value.replace("'i",'í');
+    document.getElementById('g_space').value=document.getElementById('g_space').value.replace("'o",'ó');
+    document.getElementById('g_space').value=document.getElementById('g_space').value.replace("'u",'ú');
+
+    document.getElementById('g_space').value=document.getElementById('g_space').value.replace("~n",'ñ');
+}
+
 
 function g_overide(){
     g_res.pop();

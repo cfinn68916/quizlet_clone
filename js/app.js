@@ -87,6 +87,7 @@ document.onerror=function(){
 
 
 document.onkeydown = function (keyevent) {
+    //enter_code
     //0:none
     //1:write see response
     //2:write hide response
@@ -103,9 +104,11 @@ document.onkeydown = function (keyevent) {
             g_end_view();
         }
     }
-
+    //key_handle
     //0:none
     //1:t/f
+    //2:write accent
+    //3:grammar accent
     if(key_handle==1){
         if (keyevent.key == "t") {
             document.getElementById('tf_true').click();
@@ -113,8 +116,12 @@ document.onkeydown = function (keyevent) {
         if (keyevent.key == "f") {
             document.getElementById('tf_false').click();
         }
+    }else if(key_handle==2){
+        w_add_accent();
+    }else if(key_handle==3){
+        g_add_accent();
     }
-
+    
 
 
 }

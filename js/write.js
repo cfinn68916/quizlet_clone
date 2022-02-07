@@ -10,6 +10,17 @@ function write_test(set=get_set(setnum)){
     write_val=[];
     write_ind=0;
     enter_code=1;
+    key_handle=2;
+}
+
+function w_add_accent(){
+    document.getElementById('write_space').value=document.getElementById('write_space').value.replace("'a",'á');
+    document.getElementById('write_space').value=document.getElementById('write_space').value.replace("'e",'é');
+    document.getElementById('write_space').value=document.getElementById('write_space').value.replace("'i",'í');
+    document.getElementById('write_space').value=document.getElementById('write_space').value.replace("'o",'ó');
+    document.getElementById('write_space').value=document.getElementById('write_space').value.replace("'u",'ú');
+
+    document.getElementById('write_space').value=document.getElementById('write_space').value.replace("~n",'ñ');
 }
 
 function write_next(){
@@ -46,6 +57,7 @@ function end_view(){
 
 function end_test(){
     enter_code=0;
+    key_handle=0;
     document.getElementById('write_test').style.display = 'none';
     document.getElementById('write_ans').style.display = 'none';
     var c=0;
