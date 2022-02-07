@@ -9,6 +9,7 @@ function write_test(set=get_set(setnum)){
     set.forEach(function(v,i,a){write_ans.push(v[1]);});
     write_val=[];
     write_ind=0;
+    enter_code=1;
 }
 
 function write_next(){
@@ -25,6 +26,8 @@ function write_next(){
     document.getElementById('write_q2').innerHTML = "Definition: "+write_q[write_ind];
     document.getElementById('write_your_ans').innerHTML = "Your answer: "+document.getElementById('write_space').value;
     document.getElementById('write_correct_ans').innerHTML = "Correct answer: "+write_ans[write_ind];
+    enter_code=2;
+    
 }
 function end_view(){
     document.getElementById('write_ans').style.display = 'none';
@@ -35,10 +38,12 @@ function end_view(){
     }
     document.getElementById('write_q').innerHTML = write_q[write_ind];
     document.getElementById('write_space').value="";
+    enter_code=1;
 }
 
 
 function end_test(){
+    enter_code=0;
     document.getElementById('write_test').style.display = 'none';
     document.getElementById('write_ans').style.display = 'none';
     var c=0;
