@@ -20,8 +20,10 @@ function write_next(){
     write_val.push(correct);
     if(correct){
         document.getElementById('write_q_result').innerHTML ="Correct";
+        document.getElementById('write_overide').style.display='none'
     }else{
         document.getElementById('write_q_result').innerHTML ="Incorrect";
+        document.getElementById('write_overide').style.display='block'
     }
     document.getElementById('write_q2').innerHTML = "Definition: "+write_q[write_ind];
     document.getElementById('write_your_ans').innerHTML = "Your answer: "+document.getElementById('write_space').value;
@@ -51,4 +53,9 @@ function end_test(){
     write_val.forEach(function(v,i,a){t+=1;if(v){c+=1;}});
     alert(c+" out of "+t+" correct("+(100*c/t)+"%)");
     begin(setnum);
+}
+
+
+function write_overide(){
+    write_val.pop();
 }

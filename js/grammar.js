@@ -29,9 +29,11 @@ function g_next(){
     document.getElementById('grammar-res').style.display = 'block';
     if(g_q[g_ind-1][1]==document.getElementById('g_space').value){
         document.getElementById('g_q_result').innerHTML="Correct";
+        document.getElementById('g_overide').style.display='none'
         g_res.push(1);
     }else{
         document.getElementById('g_q_result').innerHTML="Incorrect";
+        document.getElementById('g_overide').style.display='block'
         g_res.push(0);
     }
     document.getElementById('g_q2').innerHTML='Definition: '+g_q[g_ind-1][0];
@@ -56,4 +58,8 @@ function g_end(){
     g_res.forEach(function(v,i,a){t+=1;c+=v;});
     alert(c+" out of "+t+" correct("+(100*c/t)+"%)");
     window.location.reload();
+}
+
+function g_overide(){
+    g_res.pop();
 }

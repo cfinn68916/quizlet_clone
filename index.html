@@ -8,7 +8,7 @@
     <script>var version='v1.1'</script>
   </head>
 
-  <body class='light-mode' onerror="alert('sorry, an error occured');window.location.reload();">
+  <body class='light-mode' onerror="alert('sorry, an error occured');//window.location.reload();">
     <div id='set_selector'>
       <input type='button' class="light-mode" value="spanish 3 unit 2 lesson 1 vocab" id='set_1' onclick="begin(1);">
       <input type='button' class="light-mode" value="spanish 3 unit 2 lesson 2 vocab" id='set_2' onclick="begin(2);">
@@ -49,6 +49,7 @@
       <p id="g_q2" class="light-mode"></p>
       <p id="g_your_ans" class="light-mode"></p>
       <p id="g_correct_ans" class="light-mode"></p>
+      <input type="button" class="light-mode" id="g_overide" onclick="g_overide();g_end_view();" value="overide">
       <input type="button" class="light-mode" id="g_submit" onclick="g_end_view();" value="next">
     </div>
 
@@ -92,6 +93,7 @@
       <p id="write_q2" class="light-mode"></p>
       <p id="write_your_ans" class="light-mode"></p>
       <p id="write_correct_ans" class="light-mode"></p>
+      <input type="button" class="light-mode" id="write_overide" onclick="write_overide();end_view();" value="overide">
       <input type="button" class="light-mode" id="write_submit" onclick="end_view();" value="next">
     </div>
     
