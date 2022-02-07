@@ -76,6 +76,13 @@ function replace_all(st,i,o){
 }
 
 
+function rf(inp){
+    return inp.trim().toLowerCase();
+}
+document.onerror=function(){
+    alert('sorry, an error occured');
+}
+
 
 document.onkeydown = function (keyevent) {
     //0:none

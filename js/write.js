@@ -16,7 +16,7 @@ function write_next(){
     document.getElementById('write_ans').style.display = 'block';
     document.getElementById('write_test').style.display = 'none';
     
-    var correct=write_ans[write_ind]==document.getElementById('write_space').value;
+    var correct=rf(write_ans[write_ind])==rf(document.getElementById('write_space').value);
     write_val.push(correct);
     if(correct){
         document.getElementById('write_q_result').innerHTML ="Correct";
