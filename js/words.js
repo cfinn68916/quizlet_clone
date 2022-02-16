@@ -22,7 +22,7 @@ function gen_q(num,qty){
     var res=[];
     if(num==0){
         for(var i=0;i<qty;i++){
-            var verb=imperfect_verbs[Math.floor(Math.random()*verbs.length)];
+            var verb=verbs[Math.floor(Math.random()*verbs.length)][1];
             let tmp=Math.floor(Math.random()*subjects.length);
             var subj=subjects[tmp];
             let conj=['estoy','estás','está','está','estamos','estáis','están','están'][tmp];
@@ -38,7 +38,7 @@ function gen_q(num,qty){
         
     }else if(num==1){
         for(var i=0;i<qty;i++){
-            var verb=verbs[Math.floor(Math.random()*verbs.length)][1];
+            var verb=imperfect_verbs[Math.floor(Math.random()*imperfect_verbs.length)];
             let tmp=Math.floor(Math.random()*subjects.length);
             let a_conj=['aba','abas','aba','aba','ábamos','abais','aban','aban'][tmp];
             let ie_conj=['ía','ías','ía','ía','íamos','íais','ían','ían'][tmp];
