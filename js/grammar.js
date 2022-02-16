@@ -10,7 +10,7 @@ function grammar_init(){
 }
 
 function g_begin(num){
-    g_q=gen_q(num,10);
+    g_q=gen_q(num,get_qty());
     g_ind=0;
     g_res=[];
     

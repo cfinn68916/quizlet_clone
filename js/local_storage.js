@@ -56,6 +56,17 @@ function cs_set(num){
     return res;
 }
 
+function get_qty(){
+    let tmp=localStorage.getItem('set_l');
+    if(tmp==null){
+        localStorage.setItem('set_l',10)
+        return 10;
+    }else{
+        return tmp;
+    }
+}
+
+
 function cs_name(num){
     return localStorage.getItem('cs'+num).split('<>')[0];
 }
