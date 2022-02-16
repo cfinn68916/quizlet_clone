@@ -19,6 +19,7 @@ function g_begin(num){
     document.getElementById('g_q').innerHTML=g_q[g_ind][0];
     enter_code=3;
     key_handle=3;
+    document.getElementById("g_space").focus();
 }
 
 function g_next(){
@@ -41,6 +42,7 @@ function g_next(){
     document.getElementById('g_your_ans').innerHTML='Your answer: '+document.getElementById('g_space').value;
     document.getElementById('g_correct_ans').innerHTML='Correct answer: '+g_q[g_ind-1][1];
     enter_code=4;
+    document.getElementById("g_space").focus();
 }
 function g_end_view(){
     document.getElementById('g_q').innerHTML=g_q[g_ind][0];
