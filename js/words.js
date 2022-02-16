@@ -4,7 +4,7 @@ var verbs_ir=[];
 var verbs;
 //['estoy','estás','está','está','estamos','estáis','están','están']
 var subjects=['yo','tu','el','ella','nosotros','vosotros','ellos','ellas'];
-
+var imperfect_verbs=['ser','comer','estudiar','trabajar','correr','dibujar','descansar','pintar','manejar','enseñar','preguntar','estar','desayunar','dormir','almorzar','buscar','abrir','bailar','cantar','cocinar','celebrar','decorar','nadar','ganar','jugar','esquiar','patinar','saltar','caminar','charlar','escribir','cortar','mandar','borrar','pegar','llamar','acampar','pescar','regatear','ver','ir'];
 
 const nouns=0;
 
@@ -22,7 +22,7 @@ function gen_q(num,qty){
     var res=[];
     if(num==0){
         for(var i=0;i<qty;i++){
-            var verb=verbs[Math.floor(Math.random()*verbs.length)][1];
+            var verb=imperfect_verbs[Math.floor(Math.random()*verbs.length)];
             let tmp=Math.floor(Math.random()*subjects.length);
             var subj=subjects[tmp];
             let conj=['estoy','estás','está','está','estamos','estáis','están','están'][tmp];
@@ -35,6 +35,29 @@ function gen_q(num,qty){
             }
 
         }
-        return res;
+        
+    }else if(num==1){
+        for(var i=0;i<qty;i++){
+            var verb=verbs[Math.floor(Math.random()*verbs.length)][1];
+            let tmp=Math.floor(Math.random()*subjects.length);
+            let a_conj=['aba','abas','aba','aba','ábamos','abais','aban','aban'][tmp];
+            let ie_conj=['ía','ías','ía','ía','íamos','íais','ían','ían'][tmp];
+            var subj=subjects[tmp];
+            if(verb=='ser'){
+                res.push([subj+'  |  '+verb,['era','eras','era','era','éramos','erais','eran','eran'][subj]]);
+            }else if(verb=='ver'){
+                res.push([subj+'  |  '+verb,['veía','veías','veía','veía','veíamos','veíais','veían','veían'][subj]]);
+            }else if(verb=='ir'){
+                res.push([subj+'  |  '+verb,['iba','ibas','iba','iba','íbamos','ibais','iban','iban'][subj]]);
+            }else if(verb[verb.length-2]=='e'){
+                res.push([subj+'  |  '+verb,verb.replace('er',ie_conj)]);
+            }else if(verb[verb.length-2]=='a'){
+                res.push([subj+'  |  '+verb,verb.replace('ar',a_conj)]);
+            }else if(verb[verb.length-2]=='i'){
+                res.push([subj+'  |  '+verb,verb.replace('ir',ie_conj)]);
+            }
     }
+    }
+
+    return res;
 }
