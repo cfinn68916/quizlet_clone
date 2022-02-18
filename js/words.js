@@ -4,7 +4,7 @@ var verbs_ir=[];
 var verbs;
 //['estoy','estás','está','está','estamos','estáis','están','están']
 var subjects=['yo','tu','el','ella','nosotros','vosotros','ellos','ellas'];
-var imperfect_verbs=['ser','comer','estudiar','trabajar','correr','dibujar','descansar','pintar','manejar','enseñar','preguntar','estar','desayunar','dormir','almorzar','buscar','abrir','bailar','cantar','cocinar','celebrar','decorar','nadar','ganar','jugar','esquiar','patinar','saltar','caminar','charlar','escribir','cortar','mandar','borrar','pegar','llamar','acampar','pescar','regatear','ver','ir'];
+var imperfect_verbs=['ser','comer','estudiar','trabajar','correr','dibujar','descansar','pintar','manejar','enseñar','preguntar','estar','desayunar','buscar','abrir','bailar','cantar','cocinar','celebrar','decorar','nadar','ganar','jugar','esquiar','patinar','saltar','caminar','charlar','escribir','cortar','mandar','borrar','pegar','llamar','acampar','pescar','regatear','ver','ir','dar','saber'];
 
 const nouns=0;
 
@@ -13,8 +13,8 @@ function sort(){
     verbs.forEach(function (v,i,a){if(v[1][v[1].length-2]=='e'){verbs_er.push(v);}else if(v[1][v[1].length-2]=='a'){verbs_ar.push(v);}else if(v[1][v[1].length-2]=='i'){verbs_ir.push(v);}})
 }
 //0:present progressive
-//
-//
+//1:imperfect
+//2:subjunctive
 
 
 function gen_q(num,qty){
@@ -57,6 +57,33 @@ function gen_q(num,qty){
                 res.push([subj+'  |  '+verb,verb.replace('ir',ie_conj)]);
             }
     }
+    }else if(num==2){
+        for(var i=0;i<qty;i++){
+            var verb=imperfect_verbs[Math.floor(Math.random()*imperfect_verbs.length)];
+            let tmp=Math.floor(Math.random()*subjects.length);
+            var subj=subjects[tmp];
+            let a_conj=['e','es','e','e','emos','éis','en','en'][tmp];
+            let ie_conj=['a','as','a','a','amos','áis','an','an'][tmp];
+            if(verb=='ser'){
+                res.push([subj+'  |  '+verb,'ojalá que '+['sea','seas','sea','sea','seamos','seáis','sean','sean'][tmp]]);
+            }else if(verb=='dar'){
+                res.push([subj+'  |  '+verb,'ojalá que '+['dé','des','dé','dé','demos','déis','den','den'][tmp]]);
+            }else if(verb=='ir'){
+                res.push([subj+'  |  '+verb,'ojalá que '+['vaya','vayas','vaya','vaya','vayamos','vayáis','vayan','vayan'][tmp]]);
+            }else if(verb=='estar'){
+                res.push([subj+'  |  '+verb,'ojalá que '+['esté','estés','esté','esté','estemos','estéis','estén','estén'][tmp]]);
+            }else if(verb=='saber'){
+                res.push([subj+'  |  '+verb,'ojalá que '+['sepa','sepas','sepa','sepa','sepamos','sepáis','sepan','sepan'][tmp]]);
+            }else if(verb[verb.length-2]=='e'){
+                res.push([subj+'  |  '+verb,'ojalá que '+verb.replace('er',ie_conj)]);
+            }else if(verb[verb.length-2]=='a'){
+                res.push([subj+'  |  '+verb,'ojalá que '+verb.replace('ar',a_conj)]);
+            }else if(verb[verb.length-2]=='i'){
+                res.push([subj+'  |  '+verb,'ojalá que '+verb.replace('ir',ie_conj)]);
+            }
+
+        }
+
     }
 
     return res;
