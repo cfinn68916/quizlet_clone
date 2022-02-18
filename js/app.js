@@ -2,6 +2,7 @@ var phase;
 var setnum;
 var enter_code=0;
 var key_handle=0;
+
 onload= function(){
     document.getElementById('flashcards').style.display = 'none';
     document.getElementById('grammar-topic-selector').style.display = 'none';
@@ -81,9 +82,7 @@ function replace_all(st,i,o){
 function rf(inp){
     return inp.trim().toLowerCase();
 }
-document.onerror=function(){
-    alert('sorry, an error occured');
-}
+
 
 
 document.onkeydown = function (keyevent) {

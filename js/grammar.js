@@ -1,4 +1,4 @@
-var g_q;
+var g_q=[];
 var g_ind;
 var g_res;
 
@@ -25,7 +25,8 @@ function g_begin(num){
 function g_next(){
     g_ind+=1;
     document.getElementById('grammar-test').style.display = 'none';
-    if(g_ind==10){
+    if(g_ind==g_q.length){
+        g_ind=g_ind-1;
         g_end();
     }
     document.getElementById('grammar-res').style.display = 'block';
@@ -42,13 +43,16 @@ function g_next(){
     document.getElementById('g_your_ans').innerHTML='Your answer: '+document.getElementById('g_space').value;
     document.getElementById('g_correct_ans').innerHTML='Correct answer: '+g_q[g_ind-1][1];
     enter_code=4;
-    document.getElementById("g_space").focus();
+    
+    
 }
 function g_end_view(){
+    
     document.getElementById('g_q').innerHTML=g_q[g_ind][0];
     document.getElementById('grammar-test').style.display = 'block';
     document.getElementById('grammar-res').style.display = 'none';
     document.getElementById('g_space').value='';
+    document.getElementById("g_space").focus();
     enter_code=3;
 }
 
