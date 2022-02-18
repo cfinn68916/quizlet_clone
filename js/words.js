@@ -44,11 +44,11 @@ function gen_q(num,qty){
             let ie_conj=['ía','ías','ía','ía','íamos','íais','ían','ían'][tmp];
             var subj=subjects[tmp];
             if(verb=='ser'){
-                res.push([subj+'  |  '+verb,['era','eras','era','era','éramos','erais','eran','eran'][subj]]);
+                res.push([subj+'  |  '+verb,['era','eras','era','era','éramos','erais','eran','eran'][tmp]]);
             }else if(verb=='ver'){
-                res.push([subj+'  |  '+verb,['veía','veías','veía','veía','veíamos','veíais','veían','veían'][subj]]);
+                res.push([subj+'  |  '+verb,['veía','veías','veía','veía','veíamos','veíais','veían','veían'][tmp]]);
             }else if(verb=='ir'){
-                res.push([subj+'  |  '+verb,['iba','ibas','iba','iba','íbamos','ibais','iban','iban'][subj]]);
+                res.push([subj+'  |  '+verb,['iba','ibas','iba','iba','íbamos','ibais','iban','iban'][tmp]]);
             }else if(verb[verb.length-2]=='e'){
                 res.push([subj+'  |  '+verb,verb.replace('er',ie_conj)]);
             }else if(verb[verb.length-2]=='a'){
