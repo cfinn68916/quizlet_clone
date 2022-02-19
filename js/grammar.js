@@ -30,7 +30,7 @@ function g_next(){
         g_end();
     }
     document.getElementById('grammar-res').style.display = 'block';
-    if(g_q[g_ind-1][1]==document.getElementById('g_space').value){
+    if(rf(g_q[g_ind-1][1])==rf(document.getElementById('g_space').value)){
         document.getElementById('g_q_result').innerHTML="Correct";
         document.getElementById('g_overide').style.display='none';
         g_res.push(1);
