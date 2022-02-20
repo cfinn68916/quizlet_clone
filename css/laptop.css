@@ -7,11 +7,11 @@
     text-align: center;
     margin-left: auto;
   margin-right: auto;
-
-
 }
-#phone{display: none;}
 
+#phone{
+    display: none;
+}
 
 #next{
     margin-left: auto;
@@ -22,7 +22,6 @@
   border-style: solid;
     border-width: 1px;
 }
-
 
 #tf_question{
     border-style: solid;
