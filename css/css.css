@@ -1,5 +1,5 @@
-@import "phone.css" screen and (max-width: 600px);
-
+@import "phone.css" screen and (max-width: 992px);
+/*600px*/
 
 @import "laptop.css" screen and (min-width: 992px);
 
