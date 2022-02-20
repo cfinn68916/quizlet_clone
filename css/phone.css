@@ -1,0 +1,68 @@
+#space{
+    border-style: solid;
+    border-width: 1px;
+    font-size: 10px;
+    width: 40%;
+    height: 100px;
+    text-align: center;
+    margin-left: auto;
+  margin-right: auto;
+
+
+}
+#phone{display: block;}
+
+
+
+#next{
+    margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  text-align: center;
+  width: 10%;
+  border-style: solid;
+    border-width: 1px;
+}
+
+
+#tf_question{
+    border-style: solid;
+    border-width: 1px;
+    width: 600px;
+    height: 100px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#tf_false{
+    border-style: solid;
+    border-width: 1px;
+    width: 40px;
+}
+
+#tf_true{
+    border-style: solid;
+    border-width: 1px;
+    width: 40px;
+}
+
+#dark-light{
+    border-width: 1px;
+    border-style: solid;
+    width: 150px;
+}
+
+.light-mode{
+    color:black;
+    background-color:white;
+}
+
+.dark-mode{
+    color:white;
+    background-color:#303545;
+}
+
+#set_selector{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

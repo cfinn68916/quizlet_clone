@@ -1,7 +1,24 @@
+@import "phone.css" screen and (max-width: 600px);
+
+
+@import "laptop.css" screen and (min-width: 992px);
+
+
+/* Extra small devices (phones, 600px and down) */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/*@media only screen and (min-width: 600px) {}*/
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+/*@media only screen and (min-width: 992px) {}*/
+
 #space{
     border-style: solid;
     border-width: 1px;
-    font-size: 30px;
+    font-size: 40px;
     width: 40%;
     height: 100px;
     text-align: center;
@@ -9,57 +26,4 @@
   margin-right: auto;
 
 
-}
-
-#next{
-    margin-left: auto;
-  margin-right: auto;
-  border-style: solid;
-  text-align: center;
-  width: 10%;
-  border-style: solid;
-    border-width: 1px;
-}
-
-
-#tf_question{
-    border-style: solid;
-    border-width: 1px;
-    width: 600px;
-    height: 100px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#tf_false{
-    border-style: solid;
-    border-width: 1px;
-    width: 40px;
-}
-
-#tf_true{
-    border-style: solid;
-    border-width: 1px;
-    width: 40px;
-}
-
-#dark-light{
-    border-width: 1px;
-    border-style: solid;
-    width: 150px;
-}
-
-.light-mode{
-    color:black;
-    background-color:white;
-}
-
-.dark-mode{
-    color:white;
-    background-color:#303545;
-}
-
-#set_selector{
-    display: grid;
-    grid-template-columns: auto auto auto;
 }
