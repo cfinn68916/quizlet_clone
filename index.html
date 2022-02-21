@@ -11,32 +11,32 @@
 
   <body class='light-mode' onerror="alert('sorry, an error occured');window.location.reload();">
     <div id='set_selector'>
-      <input type='button' class="light-mode" value="spanish 3 unit 2 lesson 1 vocab" id='set_1' onclick="begin(1);">
-      <input type='button' class="light-mode" value="spanish 3 unit 2 lesson 2 vocab" id='set_2' onclick="begin(2);">
-      <input type='button' class="light-mode" value="spanish 3 unit 2 all vocab" id='set_3' onclick="begin(3);">
-      <input type='button' class="light-mode" value="spanish 3 unit 3 lesson 1 vocab" id='set_4' onclick="begin(4);">
-      <input type='button' class="light-mode" value="spanish 3 unit 3 lesson 2 vocab" id='set_5' onclick="begin(5);">
-      <input type='button' class="light-mode" value="spanish 3 unit 3 all vocab" id='set_6' onclick="begin(6);">
-      <input type='button' class="light-mode" value="spanish 3 unit 4 lesson 1 vocab" id='set_7' onclick="begin(7);">
-      <input type='button' class="light-mode" value="spanish 3 unit 4 lesson 2 vocab" id='set_7' onclick="begin(8);">
-      <input type='button' class="light-mode" value="spanish 3 unit 4 all vocab" id='set_7' onclick="begin(9);">
+      <p class="light-mode , p-button" id='set_1' onclick="begin(1);">spanish 3 unit 2 lesson 1 vocab</p>
+      <p class="light-mode , p-button" id='set_2' onclick="begin(2);">spanish 3 unit 2 lesson 2 vocab</p>
+      <p class="light-mode , p-button" id='set_3' onclick="begin(3);">spanish 3 unit 2 all vocab</p>
+      <p class="light-mode , p-button" id='set_4' onclick="begin(4);">spanish 3 unit 3 lesson 1 vocab</p>
+      <p class="light-mode , p-button" id='set_5' onclick="begin(5);">spanish 3 unit 3 lesson 2 vocab</p>
+      <p class="light-mode , p-button" id='set_6' onclick="begin(6);">spanish 3 unit 3 all vocab</p>
+      <p class="light-mode , p-button" id='set_7' onclick="begin(7);">spanish 3 unit 4 lesson 1 vocab</p>
+      <p class="light-mode , p-button" id='set_7' onclick="begin(8);">spanish 3 unit 4 lesson 2 vocab</p>
+      <p class="light-mode , p-button" id='set_7' onclick="begin(9);">spanish 3 unit 4 all vocab</p>
 
-      <input type='button' class="light-mode" value="grammar" id='grammar_set_select' onclick="grammar_init();">
+      <p class="light-mode , p-button" id='grammar_set_select' onclick="grammar_init();">grammar</p>
       
 
-      <input type="button" class="light-mode" value="custom set 1" id="set_cs_1" onclick="begin(-1);">
-      <input type="button" class="light-mode" value="custom set 2" id="set_cs_2" onclick="begin(-2);">
-      <input type="button" class="light-mode" value="custom set 3" id="set_cs_3" onclick="begin(-3);">
-      <input type="button" class="light-mode" value="custom set 4" id="set_cs_4" onclick="begin(-4);">
-      <input type="button" class="light-mode" value="edit sets" id="set_edit" onclick="edit_custom();">
+      <p class="light-mode , p-button" id="set_cs_1" onclick="begin(-1);">custom set 1</p>
+      <p class="light-mode , p-button" id="set_cs_2" onclick="begin(-2);">custom set 2</p>
+      <p class="light-mode , p-button" id="set_cs_3" onclick="begin(-3);">custom set 3</p>
+      <p class="light-mode , p-button" id="set_cs_4" onclick="begin(-4);">custom set 4</p>
+      <p class="light-mode , p-button" id="set_edit" onclick="edit_custom();">edit sets</p>
       
 
     </div>
 
     <div id="grammar-topic-selector">
-      <input type='button' class="light-mode" value="present progressive" id='set_1' onclick="g_begin(0);">
-      <input type='button' class="light-mode" value="imperfect" id='set_2' onclick="g_begin(1);">
-      <input type='button' class="light-mode" value="subjunctive" id='set_3' onclick="g_begin(2);">
+      <input type="button" class="light-mode" value="imperfect" id='set_2' onclick="g_begin(1);">
+      <input type="button" class="light-mode" value="present progressive" id='set_1' onclick="g_begin(0);">
+      <input type="button" class="light-mode" value="subjunctive" id='set_3' onclick="g_begin(2);">
 
 
     </div>
@@ -127,6 +127,7 @@
       <p id='dark-light' class="light-mode" onclick="invert_mode();">switch to dark mode</p>
       <a class="light-mode" href="https://docs.google.com/forms/d/e/1FAIpQLScFJyk920sRvuHqiM6cCuwQz1aYMIoGeNb67kLfvbGrzE6Dbw/viewform?usp=sf_link">report a problem</a>
       <p class="light-mode" id='phone'>you are using a phone</p>
+      <p class="light-mode" id='laptop'>you are using a laptop</p>
       <a class="light-mode" href="https://github.com/cfinn68916/quizlet_clone">source code</a>
     </div>
 
