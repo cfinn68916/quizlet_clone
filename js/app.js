@@ -14,7 +14,7 @@ onload= function(){
     document.getElementById('grammar-res').style.display = 'none';
     document.getElementById('add_set').style.display = 'none';
     document.getElementById('tf_ans').style.display = 'none';
-    [1,2,3,4].forEach(function(v,i,a){if(cs_exists(v)){document.getElementById('set_cs_'+v).value=cs_name(v);}});
+    [1,2,3,4].forEach(function(v,i,a){if(cs_exists(v)){document.getElementById('set_cs_'+v).innerHTML=cs_name(v);}});
     if(getlocal(dark_light=true)=='light'){
         to_light_mode();
     }else{
