@@ -20,17 +20,15 @@ function g_begin(num){
     enter_code=3;
     key_handle=3;
     document.getElementById("g_space").focus();
+    document.getElementById('g_num').innerHTML='1/'+g_q.length;
 }
 
 function g_next(){
-    g_ind+=1;
+    
     document.getElementById('grammar-test').style.display = 'none';
-    if(g_ind==g_q.length){
-        g_ind=g_ind-1;
-        g_end();
-    }
+    
     document.getElementById('grammar-res').style.display = 'block';
-    if(rf(g_q[g_ind-1][1])==rf(document.getElementById('g_space').value)){
+    if(rf(g_q[g_ind][1])==rf(document.getElementById('g_space').value)){
         document.getElementById('g_q_result').innerHTML="Correct";
         document.getElementById('g_overide').style.display='none';
         g_res.push(1);
@@ -39,21 +37,29 @@ function g_next(){
         document.getElementById('g_overide').style.display='block';
         g_res.push(0);
     }
-    document.getElementById('g_q2').innerHTML='Definition: '+g_q[g_ind-1][0];
+    document.getElementById('g_q2').innerHTML='Definition: '+g_q[g_ind][0];
     document.getElementById('g_your_ans').innerHTML='Your answer: '+document.getElementById('g_space').value;
-    document.getElementById('g_correct_ans').innerHTML='Correct answer: '+g_q[g_ind-1][1];
+    document.getElementById('g_correct_ans').innerHTML='Correct answer: '+g_q[g_ind][1];
+    
+    
     enter_code=4;
     
     
 }
 function g_end_view(){
+    g_ind+=1;
+    if(g_ind==g_q.length){
+        g_end();
+    }else{
     
     document.getElementById('g_q').innerHTML=g_q[g_ind][0];
     document.getElementById('grammar-test').style.display = 'block';
     document.getElementById('grammar-res').style.display = 'none';
     document.getElementById('g_space').value='';
     document.getElementById("g_space").focus();
+    document.getElementById('g_num').innerHTML=(g_ind+1)+'/'+g_q.length;
     enter_code=3;
+    }
 }
 
 function g_end(){

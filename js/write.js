@@ -12,6 +12,7 @@ function write_test(set=get_set(setnum)){
     enter_code=1;
     key_handle=2;
     document.getElementById("write_space").focus();
+    document.getElementById('write_num').innerHTML='1/'+write_q.length;
 }
 
 function w_add_accent(){
@@ -54,6 +55,7 @@ function end_view(){
     document.getElementById('write_space').value="";
     enter_code=1;
     document.getElementById("write_space").focus();
+    document.getElementById('write_num').innerHTML=(write_ind+1)+'/'+write_q.length;
 }
 
 
