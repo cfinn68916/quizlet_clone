@@ -3,17 +3,11 @@ var setnum;
 var enter_code=0;
 var key_handle=0;
 
+var exclude=['flashcards','grammar-topic-selector','tf_test','write_test','study_selector','write_ans','grammar-test','grammar-res','add_set','tf_ans','settings'];
+
+
 onload= function(){
-    document.getElementById('flashcards').style.display = 'none';
-    document.getElementById('grammar-topic-selector').style.display = 'none';
-    document.getElementById('tf_test').style.display = 'none';
-    document.getElementById('write_test').style.display = 'none';
-    document.getElementById('study_selector').style.display = 'none';
-    document.getElementById('write_ans').style.display = 'none';
-    document.getElementById('grammar-test').style.display = 'none';
-    document.getElementById('grammar-res').style.display = 'none';
-    document.getElementById('add_set').style.display = 'none';
-    document.getElementById('tf_ans').style.display = 'none';
+    exclude.forEach(function(v,i,a){document.getElementById(v).style.display='none';});
     [1,2,3,4].forEach(function(v,i,a){if(cs_exists(v)){document.getElementById('set_cs_'+v).innerHTML=cs_name(v);}});
     if(getlocal(dark_light=true)=='light'){
         to_light_mode();
@@ -124,3 +118,5 @@ document.onkeydown = function (keyevent) {
 
 
 }
+
+
