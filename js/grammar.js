@@ -1,6 +1,7 @@
 var g_q=[];
 var g_ind;
 var g_res;
+var g_set;
 
 
 function grammar_init(){
@@ -13,6 +14,7 @@ function g_begin(num){
     g_q=gen_q(num,get_qty());
     g_ind=0;
     g_res=[];
+    g_set=num;
     
     document.getElementById('grammar-topic-selector').style.display = 'none';
     document.getElementById('grammar-test').style.display = 'block';
@@ -69,6 +71,7 @@ function g_end(){
     document.getElementById('grammar-res').style.display = 'none';
     var c=0;
     var t=0;
+    add_res('g_'+g_set,g_res)
     g_res.forEach(function(v,i,a){t+=1;c+=v;});
     alert(c+" out of "+t+" correct("+(100*c/t)+"%)");
     window.location.reload();

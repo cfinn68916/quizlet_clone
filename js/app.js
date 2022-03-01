@@ -3,7 +3,7 @@ var setnum;
 var enter_code=0;
 var key_handle=0;
 
-var exclude=['flashcards','grammar-topic-selector','tf_test','write_test','study_selector','write_ans','grammar-test','grammar-res','add_set','tf_ans','settings'];
+var exclude=['flashcards','grammar-topic-selector','tf_test','write_test','study_selector','write_ans','grammar-test','grammar-res','add_set','tf_ans','stats'];
 
 
 onload= function(){
@@ -75,6 +75,32 @@ function replace_all(st,i,o){
 
 function rf(inp){
     return inp.trim().toLowerCase();
+}
+
+function make_stats(){
+    document.getElementById('set_selector').style.display = 'none';
+    exclude.forEach(function(v,i,a){document.getElementById(v).style.display='none';});
+    document.getElementById('stats').style.display='block';
+    let val='';
+    val=val+'g_0:<br>';
+    var tt=0;
+    var cc=0;
+    localStorage.getItem('g_0').split('^').forEach(function(v,i,a){var c=0;var t=0;v.split(',').forEach(function(v,i,a){t+=1;if(v=='1'){c+=1;}});val=val+c+'/'+t+'<br>';tt+=t;cc+=c;});
+    val=val+'total: '+cc+'/'+tt+'<br><br>';
+
+    val=val+'g_1:<br>';
+    var tt=0;
+    var cc=0;
+    localStorage.getItem('g_1').split('^').forEach(function(v,i,a){var c=0;var t=0;v.split(',').forEach(function(v,i,a){t+=1;if(v=='1'){c+=1;}});val=val+c+'/'+t+'<br>';tt+=t;cc+=c;});
+    val=val+'total: '+cc+'/'+tt+'<br><br>';
+
+    val=val+'g_2:<br>';
+    var tt=0;
+    var cc=0;
+    localStorage.getItem('g_2').split('^').forEach(function(v,i,a){var c=0;var t=0;v.split(',').forEach(function(v,i,a){t+=1;if(v=='1'){c+=1;}});val=val+c+'/'+t+'<br>';tt+=t;cc+=c;});
+    val=val+'total: '+cc+'/'+tt+'<br><br>';
+
+    document.getElementById('stats_data').innerHTML=val;
 }
 
 

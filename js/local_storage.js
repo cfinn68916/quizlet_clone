@@ -21,10 +21,29 @@ function write_set(num,set){
 
 
 function local_verify(){
-    if(localStorage.getItem("storage-version")==null){
-        localStorage.setItem("storage-version",'v1');
-    }else if(localStorage.getItem("storage-version")!=version){
-        local_update(localStorage.getItem("storage-version"));
+    local_cq('storage_version',version);
+    local_cq('g_0','');
+    local_cq('g_1','');
+    local_cq('g_2','');   
+}
+
+function add_res(nm,res){
+    let prv=localStorage.getItem(nm);
+    prv=prv+'^';
+    res.forEach(function(v,i,a){prv=prv+v+',';});
+    if(prv[prv.length-1]==','){
+        prv=prv.slice(0,-1)
+    }
+    if(prv[0]=='^'){
+        prv=prv.substring(1);
+    }
+    localStorage.setItem(nm,prv)
+}
+
+
+function local_cq(val,r){
+    if(localStorage.getItem(val)==null){
+        localStorage.setItem(val,r);
     }
 }
 

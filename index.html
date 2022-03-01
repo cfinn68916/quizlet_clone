@@ -7,10 +7,10 @@
     <noscript>Enable javascript, or use a different browser</noscript>
     <link href="css/css.css" rel="stylesheet"/>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <script>var version='v1.1';</script>
+    <script>var version='v1.2';</script>
   </head>
 
-  <body class='light-mode' onerror="alert('sorry, an error occured');window.location.reload();">
+  <body class='light-mode' onerror="alert('sorry, an error occured');//window.location.reload();">
     <div id='set_selector'>
       <p class="light-mode , p-button" id='set_1' onclick="begin(1);">spanish 3 unit 2 lesson 1 vocab</p>
       <p class="light-mode , p-button" id='set_2' onclick="begin(2);">spanish 3 unit 2 lesson 2 vocab</p>
@@ -125,11 +125,18 @@
       
       
     </div>
+
+
+    <div id='stats'>
+      
+      <p class="light-mode" id='stats_data'></p>
+      <input type="button" class="light-mode" value="leave" onclick="window.location.reload();">
+    </div>
     
     <div id='footer'>
       <p id='dark-light' class="light-mode" onclick="invert_mode();">switch to dark mode</p>
       <a class="light-mode" href="https://docs.google.com/forms/d/e/1FAIpQLScFJyk920sRvuHqiM6cCuwQz1aYMIoGeNb67kLfvbGrzE6Dbw/viewform?usp=sf_link">report a problem</a>
-      <p class="light-mode" id=''></p>
+      <p class="light-mode" id='stats_b' onclick="make_stats()">stats</p>
       <a class="light-mode" href="https://github.com/cfinn68916/quizlet_clone">source code</a>
     </div>
 
