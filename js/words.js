@@ -8,6 +8,23 @@ var imperfect_verbs=['ser','comer','estudiar','trabajar','correr','dibujar','des
 
 const nouns=0;
 
+function replace_all(st, i, o) {
+    var res = st;
+    while (res.includes(i)) {
+        res = res.replace(i, o);
+    }
+    return res;
+}
+
+function sanatize(input) {
+    input = replace_all(input, '&', '&amp');
+    input = replace_all(input, '"', '&quot');
+    input = replace_all(input, '\'', '&#39');
+    input = replace_all(input, '<', '&lt');
+    input = replace_all(input, '>', '&gt');
+    return input;
+}
+
 function sort(){
     verbs=[["to eat","comer"],["to study","estudiar"],["to work","trabajar"],["to drink","beber"],["to run","correr"],["to draw","dibujar"],["to rest","descansar"],["to paint","pintar"],["to drive","manejar"],["to teach","enseñar"],["to arrive","llegar"],["to ask","preguntar"],["to finish","terminar"],["to answer","contestar"],["to forget","olvidar"],["to have breakfast","desayunar"],["to start","empezar"],["to close","cerrar"],["to understand","entender"],["to order","pedir"],["to sleep","dormir"],["to return","volver"],["to serve","servir"],["to have lunch","almorzar"],["to go up","subir"],["to come","venir"],["to say","decir"],["to tell","decir"],["to give","dar"],["to put","poner"],["to leave","salir"],["to bring","traer"],["to look for","buscar"],["to open","abrir"],["to receive","recibir"],["to dance","bailar"],["to sing","cantar"],["to cook","cocinar"],["to celebrate","celebrar"],["to sweep","barrer"],["to decorate","decorar"],["to swim","nadar"],["to win","ganar"],["to ski","esquiar"],["to skate","patinar"],["to jump","saltar"],["to have lunch","almorzar"],["to swim","nadar"],["to walk","caminar"],["to play","jugar"],["to scuba dive","bucear"],["to cough","toser"],["to sneeze","estornudar"],["to row","remar"],["to write","escribir"],["to begin","comenzar"],["to sell","vender"],["to end","terminar"],["to walk","caminar"],["to camp","acampar"],["to fish","pescar"],["to bargain","regatear"]];
     verbs.forEach(function (v,i,a){if(v[1][v[1].length-2]=='e'){verbs_er.push(v);}else if(v[1][v[1].length-2]=='a'){verbs_ar.push(v);}else if(v[1][v[1].length-2]=='i'){verbs_ir.push(v);}})

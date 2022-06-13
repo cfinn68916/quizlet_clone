@@ -64,13 +64,6 @@ function to_dark_mode(){
     document.querySelectorAll(".light-mode").forEach(function(v,i,a){v.classList.add("dark-mode");v.classList.remove('light-mode')});
     setlocal(dark_light='dark');
 }
-function replace_all(st,i,o){
-    var res=st;
-    while(res.includes(i)){
-        res=res.replace(i,o);
-    }
-    return res;
-}
 
 
 function rf(inp){

@@ -15,8 +15,10 @@ function local_update(fv){
 
 }
 
+
+
 function write_set(num,set){
-    localStorage.setItem('cs'+num,set);
+    localStorage.setItem('cs'+num,sanatize(set));
 }
 
 
